@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 
 
 //./app/models
-const db = require("./models");
+const db = require("./app/models");
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -40,6 +40,7 @@ db.mongoose
     process.exit();
   });
 
+  require("./app/routes/libro.routes")(app);
 
 // definimos el puerto y escuchamos
 const PUERTO = process.env.PORT || 8080;

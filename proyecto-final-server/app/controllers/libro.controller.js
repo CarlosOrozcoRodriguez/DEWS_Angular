@@ -128,7 +128,7 @@ exports.deleteAll = (req, res) => {
     });
 };
 
-// LeerRodoslos libros en catalogo
+// Leer todos los libros en catalogo
 exports.findAllEnCatalogo = (req, res) => {
     Libro.find({ enCatalogo: true })
     .then(data => {
