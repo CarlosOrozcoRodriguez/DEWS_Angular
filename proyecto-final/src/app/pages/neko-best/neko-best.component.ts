@@ -21,7 +21,7 @@ export class NekoBestComponent {
 
   categoria: string = '';
   categorias:string[] = ['husbando', 'kitsune', 'neko', 'waifu'];
-  private _nekiBestService = inject(NekoBestService);
+  private _nekoBestService = inject(NekoBestService);
   datosNeko:any;
 
   /**
@@ -30,9 +30,9 @@ export class NekoBestComponent {
    * @memberof NekoBestComponent
    */
   buscarNeko() {
-    this._nekiBestService.buscarNeko(this.categoria).subscribe(
+    this._nekoBestService.buscarNeko(this.categoria).subscribe(
       (data) => {
-        this.datosNeko = this._nekiBestService.procesarDatosNeko(data.results[0]);
+        this.datosNeko = this._nekoBestService.procesarDatosNeko(data.results[0]);
       });
   }
  
