@@ -1,0 +1,18 @@
+<div class="contenedor container">
+    <h1>Aplicación de Nekos</h1>
+    <label for="categoria">Seleccione una categoria:</label>
+    <input type="radio" [(ngModel)]="categoria" name="categoria" value="{{categorias[0]}}"> {{categorias[0]}}
+    <input type="radio" [(ngModel)]="categoria" name="categoria" value="{{categorias[1]}}"> {{categorias[1]}}
+    <input type="radio" [(ngModel)]="categoria" name="categoria" value="{{categorias[2]}}"> {{categorias[2]}}
+    <input type="radio" [(ngModel)]="categoria" name="categoria" value="{{categorias[3]}}"> {{categorias[3]}}
+    <button (click)="buscarNeko()" id="botonNeko">Buscar</button>
+    @if (datosNeko.imagen) {
+    <div id="datosNeko">
+        <h2>Este es tu Neko</h2>
+        <img class="img-thumbnail" [src]="datosNeko.imagen" alt="Foto de tu neko">
+        <p>Es del artista: {{ datosNeko.nombreArtista }}</p>
+        <p>Sube sus imagenes a: {{ datosNeko.uRLDelArtista }}</p>
+        <p>Se encontro en: {{ datosNeko.origenImagen }}</p>
+    </div>
+    }
+</div>
