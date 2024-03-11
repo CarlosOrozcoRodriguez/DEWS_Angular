@@ -1,0 +1,46 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Buscar por titulo"
+          [(ngModel)]="titulo"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              (click)="searchTitulo()"
+              >
+              Buscar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Lista de Libros</h4>
+        <ul class="list-group">
+          @for (libro of libros; track libro; let i = $index) {
+            <li
+              class="list-group-item"
+              [class.active]="i == currentIndex"
+              (click)="setActiveLibro(libro, i)"
+              >
+              {{ libro.titulo }}
+            </li>
+          }
+        </ul>
+  
+        <button class="m-3 btn btn-sm btn-danger" (click)="removeAllLibros()">
+          Borrar todos
+        </button>
+      </div>
+      <div class="col-md-6">
+        <app-libro-detalle
+          [viewMode]="true"
+          [currentLibro]="currentLibro"
+        ></app-libro-detalle>
+      </div>
+    </div>
+  

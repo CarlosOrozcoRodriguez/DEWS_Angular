@@ -1,0 +1,97 @@
+@if (viewMode) {
+    <div>
+      @if (currentLibro.id) {
+        <div>
+          <h4>Libro</h4>
+          <div>
+            <label><strong>Titulo:</strong></label> {{ currentLibro.titulo }}
+          </div>
+          <div>
+            <label><strong>Argumento:</strong></label>
+            {{ currentLibro.argumento }}
+          </div>
+          <div>
+            <label><strong>Estado:</strong></label>
+            {{ currentLibro.enCatalogo ? "En catalogo" : "No en catalogo" }}
+          </div>
+          <a class="badge badge-warning"
+            routerLink="/libros/{{ currentLibro.id }}">
+            Edit
+          </a>
+        </div>
+      }
+      @if (!currentLibro) {
+        <div>
+          <br />
+          <p>Por favor, haz click en un libro...</p>
+        </div>
+      }
+    </div>
+  } @else {
+    @if (currentLibro.id) {
+      <div class="edit-form">
+        <h4>Libro</h4>
+        <form>
+          <div class="form-group">
+            <label for="titulo">Titulo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="titulo"
+              [(ngModel)]="currentLibro.titulo"
+              name="titulo"
+              />
+            </div>
+            <div class="form-group">
+              <label for="argumento">Argumento</label>
+              <input
+                type="text"
+                class="form-control"
+                id="argumento"
+                [(ngModel)]="currentLibro.argumento"
+                name="argumento"
+                />
+              </div>
+              <div class="form-group">
+                <label><strong>Estado:</strong></label>
+                {{ currentLibro.enCatalogo ? "En catalogo" : "No en catalogo" }}
+              </div>
+            </form>
+            @if (currentLibro.enCatalogo) {
+              <button
+                class="badge badge-primary mr-2"
+                (click)="updateCataloged(false)"
+                >
+                Descatalogar
+              </button>
+            }
+            @if (!currentLibro.enCatalogo) {
+              <button
+                class="badge badge-primary mr-2"
+                (click)="updateCataloged(true)"
+                >
+                Catalogar
+              </button>
+            }
+            <button class="badge badge-danger mr-2" (click)="deleteLibro()">
+              Borrar
+            </button>
+            <button
+              type="submit"
+              class="badge badge-success mb-2"
+              (click)="updateLibro()"
+              >
+              Actualizar
+            </button>
+            <p>{{ message }}</p>
+          </div>
+        }
+        @if (!currentLibro.id) {
+          <div>
+            <br />
+            <p>No se pudo acceder al libro...</p>
+          </div>
+        }
+      }
+  
+  
