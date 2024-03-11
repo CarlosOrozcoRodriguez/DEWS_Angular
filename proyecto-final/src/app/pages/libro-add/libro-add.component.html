@@ -1,0 +1,38 @@
+<div>
+    <div class="submit-form">
+      @if (!submitted) {
+        <div>
+          <div class="form-group">
+            <label for="titulo">Titulo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="titulo"
+              required
+              [(ngModel)]="libro.titulo"
+              name="titulo"
+              />
+            </div>
+            <div class="form-group">
+              <label for="argumento">Argumento</label>
+              <input
+                class="form-control"
+                id="argumento"
+                required
+                [(ngModel)]="libro.argumento"
+                name="argumento"
+                />
+              </div>
+              <button (click)="saveLibro()" class="btn btn-success">Guardar</button>
+            </div>
+          }
+  
+          @if (submitted) {
+            <div>
+              <h4>El nuevo libro fue guardado!</h4>
+              <button class="btn btn-success" (click)="newLibro()">Añadir</button>
+            </div>
+          }
+        </div>
+      </div>
+  
