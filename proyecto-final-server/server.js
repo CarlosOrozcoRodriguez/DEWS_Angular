@@ -43,7 +43,7 @@ db.mongoose
   require("./app/routes/libro.routes")(app);
 
 // definimos el puerto y escuchamos
-const PUERTO = process.env.PORT || 10000;
+const PUERTO = process.env.PORT || 8080;
 app.listen(PUERTO, () => {
   console.log(`El servidor esta escuchando en el puerto: ${PUERTO}.`);
 });

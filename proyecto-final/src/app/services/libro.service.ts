@@ -5,7 +5,7 @@ import { Libro } from '../models/libro.model';
 
 //https://dews-angular.onrender.com/ //puerto 10000?
 const baseUrl = 'http://localhost:8080/api/libros';
-const baseUrl = 'https://dews-angular.onrender.com:10000/api/libros';
+//const baseUrl = 'https://dews-angular.onrender.com:10000/api/libros';
 @Injectable({
   providedIn: 'root'
 })
