@@ -1,0 +1,18 @@
+<div class="contenedor container">
+    <h1>Aplicación de Noticias</h1>
+    <button (click)="buscarNoticia()" id="botonNoticia">Buscar</button>
+</div>
+@if (datosNoticia) {
+    @for (noticia of datosNoticia; track noticia.title){
+    <!-- <div *ngFor="let noticia of datosNoticia"> -->
+        <div class="mt-2 contenedor container">
+        <div id="datosNoticia">
+                <h2>{{ noticia.titular }}</h2>
+                <p>{{ noticia.aperitivo }}</p>
+                <a href="http://{{ noticia.url }}" target="_blank">Enlace a la noticia</a>
+            </div>
+        </div>
+            
+    <!-- </div> -->
+    }
+}
