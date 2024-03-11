@@ -3,7 +3,6 @@ import { ClimaService } from '../../services/clima.service';
 import { FormsModule } from '@angular/forms';
 
 
-
 @Component({
   selector: 'app-clima',
   templateUrl: './clima.component.html',
@@ -11,12 +10,25 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
 })
+
+
+/**
+ * Componente para mostrar el clima traido por el servicio
+ *
+ * @export
+ * @class ClimaComponent
+ */
 export class ClimaComponent  {
 
   ciudad: string = '';
   private _climaService = inject(ClimaService);
   datosClima:any;
 
+  /**
+   * LLama a la api usando el objeto observable del servicio
+   *
+   * @memberof ClimaComponent
+   */
   buscarCiudad() {
     this._climaService.buscarClima(this.ciudad).subscribe(
       (data) => {
