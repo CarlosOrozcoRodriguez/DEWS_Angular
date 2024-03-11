@@ -25,8 +25,8 @@ app.get("/", (req, res) => {
 });
 
 
-
-const db = require("./app/models");
+//./app/models
+const db = require("./models");
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
