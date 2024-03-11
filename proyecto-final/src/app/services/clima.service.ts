@@ -1,20 +1,41 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+ * Servicio para obtener el clima a partir de la API
+ *
+ * @export
+ * @class ClimaService
+ */
 export class ClimaService {
   private _http = inject(HttpClient);
   private urlBase = 'https://api.openweathermap.org/data/2.5/weather';
   private apiKey = '605507acf87117e111e54a3ab5238541';
   private difKelvin = 273.15;
 
+
+  /**
+   * Genera la llamada a la api
+   *
+   * @param {string} ciudad es la ciudad de la que se obtendra el clima
+   * @return {*}  {Observable<any>}
+   * @memberof ClimaService
+   */
   buscarClima(ciudad: string): Observable<any> {
     return this._http.get(`${this.urlBase}?q=${ciudad}&appid=${this.apiKey}`);
   }
 
+  /**
+   * Procesa los datos del clima y los convierte a objeto
+   *
+   * @param {*} data
+   * @return {*}  {*}
+   * @memberof ClimaService
+   */
   procesarDatosClima(data: any): any {
     return {
       ciudadNombre: data.name,
