@@ -14,7 +14,6 @@ export class NekoBestService {
   }
 
   procesarDatosNeko(data: any): any {
-    console.log(data);
     return {
       uRLDelArtista: data.artist_href,
       nombreArtista: data.artist_name,
