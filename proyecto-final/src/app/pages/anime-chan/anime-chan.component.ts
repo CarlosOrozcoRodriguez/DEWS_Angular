@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { AnimeChanService } from '../../services/anime-chan.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-anime-chan',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule],
   templateUrl: './anime-chan.component.html',
   styleUrl: './anime-chan.component.css'
 })

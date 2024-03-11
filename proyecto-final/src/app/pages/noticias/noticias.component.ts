@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { NoticiasService } from '../../services/noticias.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-noticias',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule],
   templateUrl: './noticias.component.html',
   styleUrl: './noticias.component.css'
 })
