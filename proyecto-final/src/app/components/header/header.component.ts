@@ -13,13 +13,23 @@ import { Router, RouterLink} from '@angular/router';
 export class HeaderComponent {
 
   public busqueda: string ="";
-  // Inyectamos el servicio Router en el constructor
-  constructor(private router: Router) { }
-  // Método para buscar y navegar a la página correspondiente
 
+  constructor(private router: Router) { }
+
+  /**
+   * Inicializa el componente
+   *
+   * @memberof HeaderComponent
+   */
   ngOnInit(): void {
   }
 
+  /**
+   * Navega a la página que contiene la busqueda
+   *
+   * @param {string} busqueda
+   * @memberof HeaderComponent
+   */
   buscar(busqueda:string) {
     switch (this.busqueda.toLowerCase()) {
       case 'adivinanza':

@@ -8,6 +8,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './adivinanza.component.css'
 })
 
+
+
+/**
+ * Componente para adivinar un numero
+ *
+ * @export
+ * @class AdivinanzaComponent
+ */
 export class AdivinanzaComponent {
   private adivinaEsteNumero = (Math.trunc(Math.random()*100)) + 1;// [0 a 1) -> 0 a 99 -> 1 a 100
   public intentos:number = 0;
@@ -18,9 +26,24 @@ export class AdivinanzaComponent {
 
   
 //cuando carga la primera vez
+
+  /**
+   * Inicializa el componente
+   * cuando carga la primera vez
+   *
+   * @memberof AdivinanzaComponent
+   */
   ngOnInit(): void {
   }
 
+
+  /**
+   * Se comprueba si se ha adivinado el numero
+   *
+   * @param {number} numeroEntrada
+   * @return {*}  {void}
+   * @memberof AdivinanzaComponent
+   */
   intentoAdivinar(numeroEntrada:number):void{
     throw new Error(numeroEntrada.toString());
     
