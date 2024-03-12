@@ -19,21 +19,24 @@
                             Interruptor</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" routerLink="" role="button" data-bs-toggle="dropdown"
+                    <button class="nav-link dropdown-toggle" id="dropdown-button"role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown-button">
                         <li>
-                            <hr class="dropdown-divider">
+                        <a class="dropdown-item">
+                            <a routerLink="/libros" class="nav-link"><i
+                                class="fas fa-book text-primary mt-1 me-2"></i>Servidor Libros</a>
+                            </a>
                         </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        <li>
+                        <a class="dropdown-item">
+                            <a routerLink="/add" class="nav-link"><i
+                                class="fas fa-square-plus text-primary mt-1 me-2"></i>Añade libro</a>
+                            </a>
+                        </li>
+                        </ul>
                 </li>
             </ul>
             <div class="d-flex"> <!-- el form imposibilitaba recuperar el valor-->
