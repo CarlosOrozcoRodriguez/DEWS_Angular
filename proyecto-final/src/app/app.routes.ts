@@ -8,6 +8,7 @@ import { LibrosListaComponent } from './pages/libros-lista/libros-lista.componen
 import { LibroDetalleComponent } from './pages/libro-detalle/libro-detalle.component';
 import { AddLibroComponent } from './pages/libro-add/libro-add.component';
 import { AdivinanzaComponent } from './components/adivinanza/adivinanza.component';
+import { InterruptorComponent } from './components/interruptor/interruptor.component';
 
 
 export const routes: Routes = [
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path: 'libros/:id', component:LibroDetalleComponent},
     {path: 'add', component:AddLibroComponent},
     {path: 'adivinanza', component:AdivinanzaComponent},
+    {path: 'interruptor', component:InterruptorComponent},
     {path: '**',redirectTo: '',pathMatch:'full' },
     
     ];

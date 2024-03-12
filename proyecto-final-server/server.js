@@ -19,10 +19,6 @@ app.use(express.json());
 // parse peticiones de tipo - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// ruta base
-app.get("/", (req, res) => {
-  res.json({ message: "Hola mundo." });
-});
 
 
 //./app/models
@@ -40,6 +36,11 @@ db.mongoose
     process.exit();
   });
 
+  // ruta base
+  app.get("/", (req, res) => {
+    res.json({ message: "Hola mundo." });
+  });
+  
   require("./app/routes/libro.routes")(app);
 
 // definimos el puerto y escuchamos

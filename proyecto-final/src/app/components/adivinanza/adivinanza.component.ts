@@ -22,6 +22,8 @@ export class AdivinanzaComponent {
   }
 
   intentoAdivinar(numeroEntrada:number):void{
+    throw new Error(numeroEntrada.toString());
+    
     console.log(this.adivinaEsteNumero);
     this.esMayor = null;
 

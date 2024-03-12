@@ -12,9 +12,11 @@
                 </li>
                 <li class="nav-item">
                     <a routerLink="/adivinanza" class="nav-link">
-                        <i
-                            class="fas fa-user-friends text-primary mt-1 me-2"></i>
                             Adivinanza</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/interruptor" class="nav-link">
+                            Interruptor</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" routerLink="" role="button" data-bs-toggle="dropdown"
@@ -34,10 +36,15 @@
                     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <div class="d-flex"> <!-- el form imposibilitaba recuperar el valor-->
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="busqueda">
+                <!-- <input class="form-control me-2" type="text" id="search" [(ngModel)]="busqueda" placeholder="Buscar"
+          aria-label="Search"> -->
+          <!-- <input type="number" id="busqueda2" [(ngModel)]="busqueda2"> 
+          <button (click)="buscar(busqueda2)" id="button">Comprobar</button> -->
+                <!-- <button (click)="buscar()" class="btn btn-outline-success" type="submit">Search</button> -->
+                <button class="btn btn-outline-success" (click)="buscar(busqueda)"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
         </div>
     </div>
 </nav>
