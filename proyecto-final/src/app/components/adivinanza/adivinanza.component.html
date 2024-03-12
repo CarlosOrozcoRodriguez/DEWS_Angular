@@ -1,0 +1,34 @@
+
+<main class ="container">
+    <h1>Adivina el número</h1>
+    <p>Introduce un número entre 1 y 100:</p>
+    <input type="number" id="numeroEntrada" [(ngModel)]="numeroEntrada"> <!--parametro-->
+    <!-- <button onclick="chequearResultado()" id="button">Comprobar</button> -->
+    
+    
+        
+    @if (esVictoria){
+        <button (click)="intentoAdivinar(numeroEntrada)" id="button" disabled>Comprobar</button> <!--boton-->
+        <p class="mensaje victoria">Has ganado</p>
+    } @else {
+        <button (click)="intentoAdivinar(numeroEntrada)" id="button">Comprobar</button> <!--boton-->
+        @if (intentos > 0){
+            @if (esMayor == null){
+                <!-- en caso de error -->
+                <p class ="mensaje error">Introduce un número entre 1 y 100</p>
+            }
+            @else if (esMayor) {
+                <p class ="mensaje mayor">El número que buscas es mayor</p>
+            } @else {
+                <p class ="mensaje menor">El número que buscas es menor</p>
+            }
+        }
+    }
+        <!-- <p id="mensaje"></p> mensaje de error mayor o menor o victoria -->
+
+
+
+    <h4>Cantidad de intentos: <p id="intentos-input">{{intentos}}</p></h4> <!--intentos-->
+    
+
+</main>

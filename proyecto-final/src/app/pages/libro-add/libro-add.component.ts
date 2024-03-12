@@ -25,6 +25,7 @@ export class AddLibroComponent {
   };
   submitted = false;
 
+  //se le pasa el servicio
   constructor(private libroService: LibroService) {}
 
   /**

@@ -14,6 +14,7 @@
 .content {
     display: block;
     grid-area: content;
+    justify-content: center;
 }
 
 /* Media query en CSS */

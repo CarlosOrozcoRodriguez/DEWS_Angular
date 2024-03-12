@@ -3,7 +3,6 @@ import { LibroService } from '../../services/libro.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Libro } from '../../models/libro.model';
 import { FormsModule } from '@angular/forms';
-
 @Component({
   selector: 'app-libro-detalle',
   standalone: true,
@@ -11,6 +10,14 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './libro-detalle.component.html',
   styleUrl: './libro-detalle.component.css'
 })
+
+
+/**
+ * Componente para ver los detalles de un libro
+ *
+ * @export
+ * @class LibroDetalleComponent
+ */
 export class LibroDetalleComponent {
   @Input() viewMode = false;
 
